@@ -1,7 +1,6 @@
 package com.microservices.customer.service;
 
-import com.microservices.customer.request.CustomerRegistrationRequest;
-import com.microservices.customer.entity.Customer;
+import com.microservices.customer.model.Customer;
 import com.microservices.customer.repository.CustomerRepository;
 import com.microservices.fraud.response.FraudCheckResponse;
 import lombok.AllArgsConstructor;
@@ -19,12 +18,8 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final RestTemplate restTemplate;
 
-    public void registerCustomer(CustomerRegistrationRequest request) {
-        Customer customer = Customer.builder()
-                .firstName(request.firstName())
-                .lastName(request.lastName())
-                .email(request.email())
-                .build();
+    public void registerCustomer(Customer customer) {
+        //TODO: DTO CONVERTER map struct
         //todo: check firstname, lastname, email are valid
 
         customerRepository.saveAndFlush(customer);
@@ -53,5 +48,8 @@ public class CustomerService {
     public void updateCustomer(Customer customer) {
         customerRepository.saveAndFlush(customer);
     }
+
+
+    //TODO: @Transactional anotasyonu araştır
 
 }

@@ -1,8 +1,9 @@
 package com.microservices.customer.repository;
 
-import com.microservices.customer.entity.Customer;
+import com.microservices.customer.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+
+public interface CustomerRepository extends JpaRepository<Customer, String> {
 
 }
