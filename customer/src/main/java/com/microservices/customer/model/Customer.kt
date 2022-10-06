@@ -19,6 +19,9 @@ data class Customer(
 ) {
 
     constructor(name: String, surname: String) : this("", name, surname, HashSet())
+    constructor() : this("", "", "", HashSet())
+
+
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

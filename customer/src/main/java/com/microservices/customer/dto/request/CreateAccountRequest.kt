@@ -1,4 +1,4 @@
-package com.microservices.customer.dto
+package com.microservices.customer.dto.request
 
 import java.math.BigDecimal
 import javax.validation.constraints.Min
@@ -9,4 +9,6 @@ data class CreateAccountRequest(
         val customerId: String,
         @field:Min(0, message = "Initial Credit value must not be negative value")
         val initialCredit: BigDecimal
-)
+) {
+    constructor() : this("", BigDecimal.ZERO)
+}

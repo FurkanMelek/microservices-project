@@ -16,7 +16,7 @@ class CustomerServiceTest {
     void setUp() {
         customerRepository = Mockito.mock(CustomerRepository.class);
         restTemplate = Mockito.mock(RestTemplate.class);
-        customerService = new CustomerService(customerRepository, restTemplate);
+//        customerService = new CustomerService(customerRepository, restTemplate);
     }
 
     @Test
