@@ -27,6 +27,15 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+networks:
+  postgres:
+    driver: bridge
+  spring:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
 #  zipkin:
 #    image: openzipkin/zipkin
 #    container_name: zipkin
@@ -107,12 +116,3 @@ services:
 #      - zipkin
 #      - postgres
 #      - rabbitmq
-networks:
-  postgres:
-    driver: bridge
-  spring:
-    driver: bridge
-
-volumes:
-  postgres:
-  pgadmin:

@@ -1,5 +1,7 @@
-package com.microservices.fraud;
+package com.microservices.fraud.controller;
 
+import com.microservices.fraud.response.FraudCheckResponse;
+import com.microservices.fraud.service.FraudCheckService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

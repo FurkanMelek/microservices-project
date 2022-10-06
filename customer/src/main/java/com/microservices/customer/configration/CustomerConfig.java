@@ -1,4 +1,4 @@
-package com.microservices.customer;
+package com.microservices.customer.configration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
