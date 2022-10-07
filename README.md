@@ -1,9 +1,9 @@
 # microservices-project
-Customer Service
-
 
 This is my simple microservice using with spring boot.
+
 There are 3 modules in the project.
+
 Customer-Service
             ->Customer
             ->Account
