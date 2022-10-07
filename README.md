@@ -4,10 +4,8 @@ This is my simple microservice using with spring boot.
 
 There are 3 modules in the project.
 
-Customer-Service
-            ->Customer
-            ->Account
-            ->Transaction
+Customer-Service: 
+  Customer, Account, Transaction
 
 Fraud-Service:
   Customer trustworthy control service used by customer service.
