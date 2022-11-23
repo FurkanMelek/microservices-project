@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.microservices.fraudgrpc;
+
+
+service FraudCheckService {
+  rpc isFraudulentCustomer(FraudCheckRequest) returns (FraudCheckResponse){
+
+  }
+}
+
+message FraudCheckRequest {
+  string name = 1;
+  string surname = 2;
+}
+
+message FraudCheckResponse {
+  bool isFraudster = 1;
+}

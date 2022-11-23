@@ -1,10 +1,12 @@
 package com.microservices.fraud.controller;
 
-import com.microservices.fraud.response.FraudCheckResponse;
+import com.microservices.fraud.dto.FraudCheckRequest;
+import com.microservices.fraud.dto.FraudCheckResponse;
 import com.microservices.fraud.service.FraudCheckService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +17,9 @@ public class FraudController {
 
     private final FraudCheckService fraudCheckService;
 
-    @GetMapping(path = "{customerId}")
-    public FraudCheckResponse isFraudulentCustomer(@PathVariable("customerId") Integer customerId) {
-        FraudCheckResponse response = new FraudCheckResponse(fraudCheckService.isFraudulentCustomer(customerId));
-        return response;
+    @PostMapping
+    public ResponseEntity<FraudCheckResponse> isFraudulentCustomer(@RequestBody FraudCheckRequest fraudCheckRequest) {
+        return ResponseEntity.ok(new FraudCheckResponse(fraudCheckService.isFraudulentCustomer(fraudCheckRequest)));
     }
 
 }

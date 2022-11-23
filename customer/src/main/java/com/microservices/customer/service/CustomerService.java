@@ -20,7 +20,7 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
     private final CustomerDtoConverter customerDtoConverter;
-    private final RestTemplate restTemplate;
+//    private final RestTemplate restTemplate;
 
     public CustomerDto registerCustomer(CreateCustomerRequest createCustomerRequest) {
         //todo: check firstname, lastname, email are valid
@@ -28,12 +28,18 @@ public class CustomerService {
         Customer customer = new Customer(createCustomerRequest.getName(), createCustomerRequest.getSurname());
 
         //todo: call fraud service with customer info
-//        FraudCheckResponse fraudCheckResponse =
-//                restTemplate.getForObject("http://FRAUD/api/v1/fraud-check/{customerId}", FraudCheckResponse.class, customer.getId());
-//        if (fraudCheckResponse.isFraudster()) {
-//            log.info("Customer is fraudulent: {}", customer);
-//            throw new IllegalStateException("Customer is fraudulent");
-//        }
+        /*
+        FraudCheckResponse fraudCheckResponse =
+                restTemplate.getForObject("http://FRAUD/api/v1/fraud-check/{customerId}", FraudCheckResponse.class, customer.getId());
+        if (fraudCheckResponse.isFraudster()) {
+            log.info("Customer is fraudulent: {}", customer);
+            throw new IllegalStateException("Customer is fraudulent");
+        }
+        */
+
+
+
+
         return customerDtoConverter.convertToCustomerDto(customerRepository.saveAndFlush(customer));
     }
 
