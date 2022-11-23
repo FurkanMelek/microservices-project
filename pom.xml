@@ -7,8 +7,10 @@
         <module>customer</module>
         <module>fraud</module>
         <module>eureka-server</module>
+        <module>fraud-grpc</module>
+        <module>fraud-service-grpc</module>
     </modules>
-    <groupId>com.example</groupId>
+    <groupId>com.furkanmelek</groupId>
     <artifactId>microservices-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>microservices-project</name>
@@ -21,6 +23,7 @@
         <spring.boot.dependencies.version>2.5.7</spring.boot.dependencies.version>
         <spring.cloud.version>2020.0.3</spring.cloud.version>
         <kotlin.version>1.7.0</kotlin.version>
+        <kotlin.apiVersion>1.7</kotlin.apiVersion>
     </properties>
 
     <!--    //Buranın amacını öğren-->
@@ -72,7 +75,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springdoc</groupId>
+             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.11</version>
         </dependency>
